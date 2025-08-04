@@ -32,6 +32,7 @@ let ataqueForte = ataqueTotal > 60;
 let nivelAvancado = nível >= 10;
 let podeEnfrentarSerpente = vidaSuficiente && (ataqueForte || nivelAvancado);
 
+console.log("");
 console.log(`🧾 LORE DA HEROÍNA: ${nome}`);
 console.log(``);
 console.log(`Datheus, o quarto sistema mais próximo do Solaris, foi criado pelos Deuses Fundadores.`);
@@ -74,11 +75,13 @@ let localAtual = "Reino de Códrix";
 let missaoAtual = "matar o Deus do espaço, 'O Cavaleiro Silencioso'";
 
 //Prólogo - Recaptulação da história do nível 1
-console.log("PRÓLOGO DA HISTÓRIA");
+console.log("_________________________________________________");
+console.log("")
+console.log("🔙 PRÓLOGO DA HISTÓRIA");
 console.log("");
 console.log(`Datheus é um planeta que foi destruído pelo evento catastrófico 'O Reset'.`);
 console.log(`O evento fez com que a Árvore Matrix, que armazenava os dados que regiam a realidade, fosse contaminada e junto, as divindades que ali governavam.`);
 console.log(`${nomePersonagem} é uma ${classePersonagem} do Reino de Códrix e uma das seis salvações destinadas a matarem os deuses corrompidos.`);
 console.log(`Com sua força de ${forca} pontos, no nível ${nivelPersonagem}, e ${defesa} pontos de defesa, ${nomePersonagem} é uma das maiores esperanças para essa geração de magos.`);
 console.log(`Sua missão atual é ${missaoAtual}.`);
-
+console.log("");
