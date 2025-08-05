@@ -30,27 +30,31 @@ let defesaTotal = DEFESA_BASE + (nível / 2);
 let vidaSuficiente = vida > 70;
 let ataqueForte = ataqueTotal > 60;
 let nivelAvancado = nível >= 10;
-let podeEnfrentarSerpente = vidaSuficiente && (ataqueForte || nivelAvancado);
+let podeEnfrentarCavaleiro = vidaSuficiente && (ataqueForte || nivelAvancado);
 
 console.log("");
 console.log(`🧾 LORE DA HEROÍNA: ${nome}`);
 console.log(``);
-console.log(`Datheus, o quarto sistema mais próximo do Solaris, foi criado pelos Deuses Fundadores.`);
+console.log(`    Datheus, o quarto planeta mais próximo do Sol, foi criado pelos Deuses Fundadores.`);
 console.log(`Todas as leis e dados que regiam a realidade eram armazenados pela Árvore Matrix.`);
-console.log(`Até que em um dia, o sistema foi assolado pelo evento catastrófico conhecido como O Reset.`);
-console.log(`Essa falha quebrou a lógica da existência dos seres que ali habitavam e enlouqueceram os criadores.`);
+console.log(`Até que em um dia, o sistema foi assolado pelo evento catastrófico conhecido como 'O Reset'.`);
+console.log(`O evento afetou a árvore e quebrou a lógica da existência dos seres que ali habitavam,`);
+console.log(`enlouquecendo também os criadores.`);
 console.log(`As divindades, agora corrompidas, lideram a organização 'Códice do Abismo',`);
 console.log(`que busca destruir o que restou de Datheus.`);
-console.log(`Mas, seis heróis foram profetizados pelas antigas lendas a salvarem o sistema da fragmentação.`);
-console.log(`Vinda das ${origem}, ${nome} é uma ${classe} do Reino de Códrix, e uma das salvações que nasceu entre bugs.`);
-console.log(`Com suas habilidades de ${funcao} e seu ${TIPO_ARMA}, '${NOME_ARMA}`);
+console.log(`Porém, seis heróis foram profetizados pelas antigas lendas a salvarem o sistema da fragmentação.`);
+console.log(`    Vinda das ${origem}, ${nome} é uma ${classe} do Reino de Códrix,`);
+console.log(`e uma das salvações que nasceu entre bugs.`);
+console.log(`Com suas habilidades de ${funcao} e seu ${TIPO_ARMA}, '${NOME_ARMA}',`);
 console.log(`ela conduz ataques criptografados que enfraquessem trojans sombrios.`);
-console.log(`${nome} é capaz de acabar com scripts virais devido ao seu nível ${nível} e um ataque total de ${ataqueTotal} pontos.`);
-console.log(`A intensificação de proteção pela ${NOME_ARMADURA} fornece um total de ${defesaTotal} pontos de defesa à ela.`);
-console.log(`Atualmente, ela acumula ${xp} XP e uma riqueza de ${ouro} de ouro.`);
-console.log(`A ${classe} nunca conseguiu ser derrubada, pois detém ${vida} pontos de vida, o maior já registrado na história do reino.`);
+console.log(`${nome} é capaz de acabar com scripts virais devido ao seu nível ${nível}`);
+console.log(`e um ataque total de ${ataqueTotal} pontos.`);
+console.log(`A intensificação de proteção pela '${NOME_ARMADURA}' fornece um total de ${defesaTotal} pontos de defesa à ela.`);
+console.log(`Atualmente, ${nome} acumula ${xp} de XP e uma riqueza de ${ouro} de moedas de ouro.`);
+console.log(`A ${classe} nunca conseguiu ser derrubada, pois detém ${vida} pontos de vida,`);
+console.log(`o maior já registrado na história do reino.`);
 console.log(`Vida suficiente? ${vidaSuficiente} | Ataque forte? ${ataqueForte} | Nível avançado? ${nivelAvancado}`);
-console.log(`Pode enfrentar a Serpente Binária? ${podeEnfrentarSerpente}.`);
+console.log(`Pode enfrentar O Cavaleiro Silencioso? ${podeEnfrentarCavaleiro}.`);
 console.log(`A luta pela sobrevivência da humanidade contra o Códice do Abismo ainda continua...`);
 console.log("");
 
@@ -61,17 +65,17 @@ let nomePersonagem = "Asmoday";
 let classePersonagem = "arquimaga";
 let vidaAtual = 160;
 let vidaMaxima = 240;
-let manaAtual = 300;
+let manaAtual = 200;
 let manaDetectável = manaAtual * 0.1;
-let manaMaxima = 300;
+let manaMaxima = 200;
 let nivelPersonagem = 16;
 let experiênciaAtual = 1350;
 let ouroAtual = 102;
 
 //Novos atributos para a batalha:
-let forca = 250;
-let defesa = 195;
-let agilidade = 205;
+let forca = 100;
+let defesa = 80;
+let agilidade = 60;
 let combatesVencidos = 20;
 
 //Estado atual da história
@@ -96,21 +100,48 @@ console.log("");
 //Verificação de xp de personagem
 if (experiênciaAtual >= 900) {
     console.log("- Recrutamento -");
-    console.log("👀 Aventureiros veteranos te observam com interesse,");
-    console.log("considerando de recrutar seus grupos...");
+    console.log("👀 Aventureiros veteranos te observam com interesse, considerando te recrutar para seus grupos...");
 }
 
 //Verificação de ouro abundante
 if (ouro >= 100) {
     console.log("- Comerciante -");
-    console.log("💰 Um comerciante ambulante de aborda: 'Olá nobre aventureira!");
+    console.log("💰 Um comerciante ambulante lhe aborda: 'Olá nobre aventureira!");
     console.log("Tenho diversos artefatos mágicos que talvez despertem o seu interesse.'");
 }
 
 //Verificação de classe e controle de mana
 if (classePersonagem === "arquimaga" && manaAtual >= 200 && manaDetectável <= 40) {
     console.log("- Controle de mana -");
-    console.log("💫 Sua habilidade de controle mágico está melhorando! ");
-    console.log("Nínguem parece perceber a presença da sua mana.");
+    console.log("💫 Sua habilidade de controle mágico está melhorando! Nínguem parece notar a presença da sua mana.");
+}
+
+//Capítulo 2 - Condicionais compostas
+console.log("");
+console.log("📍CAPÍTULO 2: O PESO DAS ESCOLHAS");
+console.log("");
+
+//Escolha baseada na quantidade de ouro
+console.log("- Dinheiro suficiente -")
+if (ouroAtual >= 40) {
+    console.log(`🔮 Percebendo que sua energia mágica se esgotou depois do treinamento,`);
+    console.log(`${nomePersonagem} compra uma poção restauradora e sente sua mana retornar lentamente.`);
+    ouroAtual -= 40;
+    console.log(`Ouro restante: ${ouroAtual}`)
+} else {
+    console.log(`😵 Sem ouro suficiente, ${nomePersonagem} começa a sentir uma tontura... mas só a resta resistir.`);
+}
+
+//Escolha baseada na agilidade
+console.log("- Locomoção pela vila -")
+if (agilidade <= 10) {
+    console.log(`🚶‍♀️${nomePersonagem} se arrasta pelas ruas movimentadas da vila e`);
+    console.log(`sente os músculos pesados a cada passo.`);
+    vidaAtual -= 4;
+    console.log(`Vida -4. Vida atual: ${vidaAtual}`)
+} else {
+    console.log(`🍂 Com passos leves e serenos, ${nomePersonagem} cruza a vila sem muito esforço.`);
+    experiênciaAtual += 2;
+    console.log(`XP +2. Experiência atual: ${experiênciaAtual} XP`)
 }
 
