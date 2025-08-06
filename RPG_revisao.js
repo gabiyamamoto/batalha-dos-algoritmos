@@ -5,15 +5,15 @@ let classe = "arquimaga";
 let funcao = "debuffer";
 let origem = "Margens Negras Corrompidas";
 let nível = 16;
-let vida = 200;
-let ouro = 132;
+let vida = 160;
+let ouro = 130;
 let xp = 1200;
 
 const NOME_ARMA = "Elegia do Suspiro Final";
 const TIPO_ARMA = "cajado";
-let DANO_BASE = 42;
+let DANO_BASE = 40;
 const NOME_ARMADURA = "Absolvição binária";
-let DEFESA_BASE = 37;
+let DEFESA_BASE = 34;
 
 //O personagem treinou e ganhou 150 pontos de experiência
 xp += 150;
@@ -63,19 +63,19 @@ console.log("");
 //Resgatar os dados do personagem anterior e adicionar mais atributos:
 let nomePersonagem = "Asmoday";
 let classePersonagem = "arquimaga";
-let vidaAtual = 160;
-let vidaMaxima = 240;
-let manaAtual = 200;
-let manaDetectável = manaAtual * 0.1;
-let manaMaxima = 200;
+let vidaAtual = 200;
+let vidaMaxima = 200;
+let manaAtual = 180;
+let manaDetectável = manaAtual * 0.2;
+let manaMaxima = 180;
 let nivelPersonagem = 16;
 let experiênciaAtual = 1350;
 let ouroAtual = 102;
 
 //Novos atributos para a batalha:
-let forca = 100;
-let defesa = 80;
-let agilidade = 60;
+let forca = (manaAtual + ataqueTotal) / 2; // 128
+let defesa = (vidaAtual + defesaTotal) / 2; // 121
+let agilidade = nivelPersonagem + manaDetectável; //48
 let combatesVencidos = 20;
 
 //Estado atual da história
@@ -124,15 +124,18 @@ console.log("");
 //Escolha baseada na quantidade de ouro
 console.log("- Dinheiro suficiente -")
 if (ouroAtual >= 40) {
-    console.log(`🔮 Percebendo que sua energia mágica se esgotou depois do treinamento,`);
+    console.log(`🔮 Percebendo que sua energia mágica diminiu depois do treinamento,`);
     console.log(`${nomePersonagem} compra uma poção restauradora e sente sua mana retornar lentamente.`);
     ouroAtual -= 40;
-    console.log(`Ouro restante: ${ouroAtual}`)
+    manaAtual = manaMaxima;
+    console.log(`Ouro restante: ${ouroAtual}`);
+    console.log(`Mana atual:${manaAtual}`);
 } else {
     console.log(`😵 Sem ouro suficiente, ${nomePersonagem} começa a sentir uma tontura... mas só a resta resistir.`);
+    experiênciaAtual += 5;
 }
 
-//Escolha baseada na agilidade
+//Escolha binária baseada na agilidade
 console.log("- Locomoção pela vila -")
 if (agilidade <= 10) {
     console.log(`🚶‍♀️${nomePersonagem} se arrasta pelas ruas movimentadas da vila e`);
@@ -141,7 +144,42 @@ if (agilidade <= 10) {
     console.log(`Vida -4. Vida atual: ${vidaAtual}`)
 } else {
     console.log(`🍂 Com passos leves e serenos, ${nomePersonagem} cruza a vila sem muito esforço.`);
-    experiênciaAtual += 2;
-    console.log(`XP +2. Experiência atual: ${experiênciaAtual} XP`)
+    experiênciaAtual += 5;
+    console.log(`XP +5. Experiência atual: ${experiênciaAtual} XP`)
 }
 
+//Capítulo 3 - Condicionais encadeadas
+console.log("");
+console.log("⚔️ CAPÍTULO 3: A Batalha final");
+console.log("");
+
+let vidaInimigo = 350;
+let nívelInimigo = 20;
+let forcaInimigo = (vidaInimigo + 50) / 2 //200
+let defesaInimigo = (vidaInimigo + nívelInimigo) / 2; //185
+let agilidadeInimigo = vidaAtual / 2; //175
+
+// Sistema de combate baseado inteligente baseado na situação
+if (manaDetectável <= 40 && manaAtual >= 150) {
+    console.log(`🗡️ O Cavaleiro Silencioso subestima ${nomePersonagem} pela sua pequena quantidade de mana. `);
+    console.log(`Logo, ela se aproveita do descuido do inimigo e realiza uma sequência de ataques massivos!`);
+    vidaInimigo -= forca;
+    defesaInimigo -= 20;
+    manaAtual -= 80;
+    console.log(`🔸 Vida do boss: ${vidaInimigo}/350`);
+} else if (agilidadeInimigo > agilidade) {
+    console.log(`⚠️ O oponente é ágil... Não há tempo para se esquivar!`);
+    console.log(`${nomePersonagem} utiliza uma magia defensiva para proteção.`);
+    manaAtual -= 5;
+} else if (vidaAtual <= 20) {
+    console.log(`🆘 A vida de ${nomePersonagem} está baixa!`);
+    console.log(`Ligeiramente, a ${classePersonagem} se esconde atrás de um pilar e usa uma magia de cura`);
+    vidaAtual = vidaMaxima;
+    manaAtual -= 50;
+} else {
+    console.log(`💥 A batalha é intensa! Mas ${nomePersonagem} usa o ambiente a seu favor para ganhar vantagem estratégica`);
+    console.log(`e limitar os movimentos do adversário!`);
+    experiênciaAtual += 20;
+    agilidadeInimigo -= 90;
+    vidaInimigo -= forca / 2;
+}
