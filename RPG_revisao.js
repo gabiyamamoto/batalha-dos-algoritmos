@@ -35,11 +35,11 @@ let podeEnfrentarCavaleiro = vidaSuficiente && (ataqueForte || nivelAvancado);
 console.log("");
 console.log(`🧾 LORE DA HEROÍNA: ${nome}`);
 console.log(``);
-console.log(`    Datheus, o quarto planeta mais próximo do Sol, foi criado pelos Deuses Fundadores. Todas as leis e dados que regiam a realidade`);
-console.log(`eram armazenados pela Árvore Matrix. Até que em um dia, o sistema foi assolado pelo evento catastrófico conhecido como 'O Reset'.`);
-console.log(`O evento afetou a árvore e quebrou a lógica da existência dos seres que ali habitavam, enlouquecendo também os criadores.`);
-console.log(`As divindades, agora corrompidas, lideram a organização 'Códice do Abismo', que busca destruir o que restou de Datheus.`);
-console.log(`Porém, seis heróis foram profetizados pelas antigas lendas a salvarem o sistema da fragmentação.`);
+console.log("    Datheus, o quarto planeta mais próximo do Sol, foi criado pelos Deuses Fundadores. Todas as leis e dados que regiam a realidade");
+console.log("eram armazenados pela Árvore Matrix. Até que em um dia, o sistema foi assolado pelo evento catastrófico conhecido como 'O Reset'.");
+console.log("O evento afetou a árvore e quebrou a lógica da existência dos seres que ali habitavam, enlouquecendo também os criadores.");
+console.log("As divindades, agora corrompidas, lideram a organização 'Códice do Abismo', que busca destruir o que restou de Datheus.");
+console.log("Porém, seis heróis foram profetizados pelas antigas lendas a salvarem o sistema da fragmentação.");
 console.log(`    Vinda das ${origem}, ${nome} é uma ${classe} do Reino de Códrix e uma das salvações que nasceu entre bugs.`);
 console.log(`Com suas habilidades de ${funcao} e seu ${TIPO_ARMA} '${NOME_ARMA}', ela conduz ataques criptografados que enfraquessem trojans`);
 console.log(`sombrios. ${nome} é capaz de acabar com scripts virais devido ao seu nível ${nível} e um ataque total de ${ataqueTotal} pontos.`);
@@ -64,9 +64,9 @@ let experiênciaAtual = 1350;
 let ouroAtual = 102;
 
 //Novos atributos para a batalha:
-let forca = (manaAtual + ataqueTotal) / 2; // 128
-let defesa = (vidaAtual + defesaTotal) / 2; // 121
-let agilidade = nivelPersonagem + manaDetectável; //48
+let forca = 165;
+let defesa = 120;
+let agilidade = 50;
 let combatesVencidos = 20;
 
 //Estado atual da história
@@ -90,13 +90,13 @@ console.log("");
 //Verificação de xp de personagem
 if (experiênciaAtual >= 900) {
     console.log("- Recrutamento -");
-    console.log("👀 Graças aos seus", experiênciaAtual, "pontos de xp, alguns aventureiros veteranos observam", nomePersonagem, "com interesse, considerando recrutá-la para seus grupos.");
+    console.log("👀 Graças aos seus", experiênciaAtual, "pontos de XP, alguns aventureiros veteranos observam", nomePersonagem, "com interesse, considerando recrutá-la para seus grupos.");
 }
 
 //Verificação de ouro abundante
 if (ouro >= 100) {
     console.log("- Comerciante -");
-    console.log("💰 O brilho das moedas de ouro da", classePersonagem,"atraem um comerciante ambulante:'Olá nobre aventureira! Tenho diversos artefatos mágicos");
+    console.log("💰 O brilho das moedas de ouro da", classePersonagem, "atraem um comerciante ambulante:'Olá nobre aventureira! Tenho diversos artefatos mágicos");
     console.log("que talvez despertem o seu interesse...'");
 }
 
@@ -114,24 +114,24 @@ console.log("");
 //Escolha baseada na quantidade de ouro
 console.log("- Dinheiro suficiente -")
 if (ouroAtual >= 40) {
-    console.log("🔮 Notando que sua energia mágica diminuiu devido ao treinamento,", nomePersonagem ,"compra uma poção restauradora e sente sua mana retornar.");
+    console.log("🔮 Notando que sua energia mágica diminuiu devido ao treinamento,", nomePersonagem, "compra uma poção restauradora e sente sua mana retornar.");
     ouroAtual -= 40;
     manaAtual = manaMaxima;
     console.log("Ouro restante:", ouroAtual, "moedas");
     console.log("Mana atual:", manaAtual);
 } else {
-    console.log("😵 Sem ouro suficiente,", nomePersonagem,"começa a sentir uma tontura... mas só a resta resistir.");
+    console.log("😵 Sem ouro suficiente,", nomePersonagem, "começa a sentir uma tontura... mas só a resta resistir.");
     experiênciaAtual += 5;
 }
 
 //Escolha binária baseada na agilidade
 console.log("- Locomoção pela vila -")
 if (agilidade <= 10) {
-    console.log("Em consequência da insuficiência de agilidade, 🚶‍♀️", nomePersonagem ,"se arrasta pelas ruas movimentadas da vila e sente os músculos pesados a cada passo.");
+    console.log("Em consequência da insuficiência de agilidade, 🚶‍♀️", nomePersonagem, "se arrasta pelas ruas movimentadas da vila e sente os músculos pesados a cada passo.");
     vidaAtual -= 4;
     console.log("Vida -4. Vida atual: ", vidaAtual)
 } else {
-    console.log("🍂 Com passos leves e serenos,", nomePersonagem, "cruza a vila sem muito esforço devido aos seus", experiênciaAtual, "pontos de agilidade.");
+    console.log("🍂 Com passos leves e serenos,", nomePersonagem, "cruza a vila sem muito esforço graças aos seus", experiênciaAtual, "pontos de agilidade.");
     experiênciaAtual += 5;
     console.log("XP +5. Experiência atual:", experiênciaAtual, "XP")
 }
@@ -140,24 +140,27 @@ if (agilidade <= 10) {
 console.log("");
 console.log("⚔️ CAPÍTULO 3: A BATALHA FINAL");
 console.log("");
-console.log(`A ${classePersonagem} ${nomePersonagem} finalmente chega ao domínio do Cavaleiro Silencioso, um dos Deuses Corrompidos que comandam o Códice do Abismo, e uma das maiores ameaças já enfrentadas pela humanidade. A batalha final começa agora...`);
+console.log(`A ${classePersonagem} ${nomePersonagem} finalmente chega ao domínio do Cavaleiro Silencioso, um dos Deuses Corrompidos que comandam o Códice do Abismo,`);
+console.log("e uma das maiores ameaças já enfrentadas pela humanidade. A batalha final começa agora...");
 console.log("");
 
-let vidaInimigo = 350;
-let nívelInimigo = 20;
-let forcaInimigo = (vidaInimigo + 50) / 2 //200
-let defesaInimigo = (vidaInimigo + nívelInimigo) / 2; //185
-let agilidadeInimigo = vidaAtual / 2; //175
+let vidaInimigo = 660;
+let nívelInimigo = 25;
+let forcaInimigo = 220;
+let defesaInimigo = 180;
+let agilidadeInimigo = 70;
+let dano = 0;
 
 //Sistema de combate baseado inteligente baseado na situação
 if (manaDetectável <= 40 && manaAtual >= 150) {
     console.log("🗡️ No início da luta, o Cavaleiro Silencioso subestima", nomePersonagem, "pela sua pequena quantidade de mana.");
     console.log("Logo, ela se aproveita do descuido do inimigo e realiza uma sequência de ataques massivos!");
-    vidaInimigo -= forca * 3;
+    dano = forca * 4;
+    vidaInimigo -= dano;
     defesaInimigo -= 20;
     manaAtual -= 80;
-    console.log(`🔹 ${nomePersonagem} causou ${forca} pontos de dano ao inimigo`);
-    console.log(`🔸 Vida do boss: ${vidaInimigo}/350`);
+    console.log(`🔹 ${nomePersonagem} causou ${dano} pontos de dano ao inimigo`);
+    console.log(`🔸 Vida do boss: ${vidaInimigo}/660`);
 } else if (agilidadeInimigo > agilidade) {
     console.log("⚠️ O oponente é ágil... Não há tempo para se esquivar!", nomePersonagem, "utiliza uma magia defensiva para proteção.");
     manaAtual -= 5;
@@ -180,10 +183,16 @@ console.log("");
 
 if (vidaInimigo <= 0) {
     console.log(`🏆 VITÓRIA TRIUNFANTE! A ${classePersonagem} ${nomePersonagem} derrota o Cavaleiro Silencioso, calando por fim uma das figuras mais perigosas do Códice do Abismo.`);
+    combatesVencidos++;
     experiênciaAtual += 1000;
     ouro += 500;
-    console.log("+ 1000 XP. Experiência atual:", experiênciaAtual, "XP");
-    console.log("+ 500 moedas de ouro. Ouro atual:", ouroAtual, "moedas")
+    console.log("Combates vencidos:", combatesVencidos);
+    console.log("+ 1000 de XP. Experiência atual:", experiênciaAtual, "XP");
+    console.log("+ 500 moedas de ouro. Ouro atual:", ouroAtual, "moedas");
 } else {
-    
+    console.log(`😭 O CAMINHO É ARDUO! O poder do Cavaleiro Silencioso se mostra superior ao da ${classePersonagem} ${nomePersonagem} neste momento. Ferida e exausta, ela recua.`);
+    console.log("No entanto, a derrota ainda é uma lição valiosa. Agora ela entende melhor a ameaça que o oponente representa e se prepara para o próximo confronto. A jornada não acabou!");
+    experiênciaAtual += 200;
+    console.log("+ 200 de XP. Experiência atual:", experiênciaAtual, "XP");
+    console.log("");
 }
