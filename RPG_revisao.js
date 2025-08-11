@@ -196,3 +196,26 @@ if (vidaInimigo <= 0) {
     console.log("+ 200 de XP. Experiência atual:", experiênciaAtual, "XP");
     console.log("");
 }
+
+// === continuação da saga épica - nível 3 ===
+//Retomar os dados do personagem dos níveis anteriores
+
+/* let nomePersonagem = "Asmoday";
+let classePersonagem = "arquimaga";
+let vidaAtual = 200;
+let vidaMaxima = 200;
+let manaAtual = 100;
+let manaDetectável = manaAtual * 0.2;
+let manaMaxima = 180;
+let nivelPersonagem = 17;
+let experiênciaAtual = 2355;
+let ouroAtual = 62; */
+
+
+// === NOVOS ELEMENTOS PARA O CASTELO DOS ARRAYS ===
+//Inventário mágico
+let inventário = ["Poção restauradora de mana", "Elegia do Suspiro Final", "Absolvição Binária"];
+let aliados = ["Rei Phanes", "Sábio Anaxágoras", "Sacerdotisa Naberius", "Guerreiro Argenti"];
+let inimigosEncontrados = ["O Devorador de Frequências", "A Flor Encriptada", "O Guardião Fragmentado"];
+let andaresTorre = ["Labirinto Invertido", "Jardim da Luz Eterna", "Arquivo Submerso"];
+
