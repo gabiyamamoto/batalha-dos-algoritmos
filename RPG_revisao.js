@@ -33,6 +33,8 @@ let nivelAvancado = nível >= 10;
 let podeEnfrentarCavaleiro = vidaSuficiente && (ataqueForte || nivelAvancado);
 
 console.log("");
+console.log("NÍVEL 1");
+console.log("");
 console.log(`🧾 LORE DA HEROÍNA: ${nome}`);
 console.log(``);
 console.log("    Datheus, o quarto planeta mais próximo do Sol, foi criado pelos Deuses Fundadores. Todas as leis e dados que regiam a realidade");
@@ -76,6 +78,8 @@ let missaoAtual = "matar o Deus do espaço, 'O Cavaleiro Silencioso'";
 //Prólogo - Recaptulação da história do nível 1
 console.log("_________________________________________________");
 console.log("")
+console.log("NÍVEL 2");
+console.log("");
 console.log("🔙 PRÓLOGO DA HISTÓRIA");
 console.log("");
 console.log(`Pronta para o seu primeiro grande desafio, a ${classePersonagem} ${nomePersonagem} se aventura nas ${localAtual}, localizada no norte do Reino de Códrix.`);
@@ -200,8 +204,8 @@ if (vidaInimigo <= 0) {
 // === continuação da saga épica - nível 3 ===
 //Retomar os dados do personagem dos níveis anteriores
 
-/* let nomePersonagem = "Asmoday";
-let classePersonagem = "arquimaga";
+let heroinaNome = "ASMODAY";
+/*let classePersonagem = "arquimaga"; 
 let vidaAtual = 200;
 let vidaMaxima = 200;
 let manaAtual = 100;
@@ -214,8 +218,86 @@ let ouroAtual = 62; */
 
 // === NOVOS ELEMENTOS PARA O CASTELO DOS ARRAYS ===
 //Inventário mágico
-let inventário = ["Poção restauradora de mana", "Elegia do Suspiro Final", "Absolvição Binária"];
-let aliados = ["Rei Phanes", "Sábio Anaxágoras", "Sacerdotisa Naberius", "Guerreiro Argenti"];
-let inimigosEncontrados = ["O Devorador de Frequências", "A Flor Encriptada", "O Guardião Fragmentado"];
-let andaresTorre = ["Labirinto Invertido", "Jardim da Luz Eterna", "Arquivo Submerso"];
+let inventario = ["Poção restauradora de mana", "Elegia do Suspiro Final", "Absolvição Binária"];
+let aliados = ["Rei Phanes", "Sábio Anaxágoras", "Sacerdotisa Naberius"];
+let inimigosEncontrados = ["Devorador de frequências", "Flor encriptada", "Autômato sombrio"];
+let salasTorre = ["Galeria dos circuitos antigos", "Jardim mecânico", "Observatório binário"];
+let tesouroColetado = [];
 
+console.log("_________________________________________________");
+console.log("");
+console.log("NÍVEL 3")
+console.log("");
+console.log("🏰 ===", heroinaNome, "ADENTRA A TORRE DOS ARRAYS ===");
+console.log("");
+console.log("Após derrotar um dos Deuses Criadores, O Cavaleiro Silencioso,", nomePersonagem, "adentra a torre de segredos, um lugar repleto de salas misteriosas.");
+console.log("Ela busca adquirir recompensas raras, se reunir a aliados e derrotar monstros poderosos.");
+console.log("Inventário inicial:", inventario.length, "itens mágicos");
+
+//Capítulo 1 - Criação e manipulação de arrays
+console.log("");
+console.log("CAPÍTULO 1: AS RELÍQUIAS PERDIDAS DA TORRE");
+console.log("");
+
+//Declaração e inicialização
+let elixiresEncontrados = ["Agilidade", "Fogo gélido", "Visão noturna"];
+let armadilhasAtiradas = [];
+
+//Acesso e modificação de elementos
+console.log("- Elixir encontrado -");
+console.log("🔎 Entre códigos antigos,", nomePersonagem, "detecta um elixir escondido nos fluxos da torre.");
+console.log("Primeiro elixir encontrado:", elixiresEncontrados[0]);
+console.log("Total de elixires mágicos:", elixiresEncontrados.length);
+console.log("");
+
+//Modificando elemento específico
+console.log("- Aprimoramento do elixir -");
+inventario[0] = "Agilidade etérea" //upgrade do elixir!
+console.log("A alquimia digital reage,", nomePersonagem, "aprimorou um elixir!");
+console.log("");
+
+//Métodos de arrays fundamentais
+console.log("- Um novo achado -");
+inventario.push("Adaga encantada"); //adiciona novo item no final
+console.log("Nos registros da torre, um novo elixir foi amazenado!")
+console.log("Novo item adicionado. Inventário:", inventario);
+console.log("");
+
+console.log("- Item removido -")
+let itemRemovido = inventario.pop(); //remove no final
+console.log(nomePersonagem, "limpa seu inventário!");
+console.log("Item removido:", itemRemovido);
+console.log("Inventário atual:", inventario);
+
+//Capítulo 2 - loop for tradicional
+console.log("");
+console.log("CAPÍTULO 2: EXPLORANDO A TORRE ALGORÍTMICA ");
+console.log("");
+
+// Explorando cada sala da torre usando for tradicional
+console.log("Entre silêncios e sombras,", nomePersonagem, "começa a explorar as salas da torre misteriosa...");
+console.log("");
+
+for (let i = 0; i < salasTorre.length; i++) {
+    console.log(`Sala ${i + 1}: ${salasTorre[i]}`);
+
+    //Lógica diferente para cada sala baseada no índice
+    if (i === 0) {
+        console.log(`Na ${salasTorre[i]}, ${nomePersonagem} encontra um grimório lendário!`);
+        tesouroColetado.push("Grimório lendário");
+        console.log("Novo item coletado. Tesouros coletados:", tesouroColetado);
+        console.log("");
+    } else if (i === 1) {
+        console.log(`Flores de aço se abrem no ${salasTorre[i]}, tentando cortar ${nomePersonagem} com suas lâminas afiadas. Porém, a ${classePersonagem} cria um escudo mágico para se proteger!`);
+        manaAtual -= 30;
+        console.log("Mana atual:", manaAtual);
+        console.log("");
+    } else {
+        console.log(`Ao entrar no ${salasTorre[i]}, ${nomePersonagem} acha um mapa estelar codificado!`)
+        experiênciaAtual += 50;
+        console.log("XP atual:", experiênciaAtual, "XP");
+        console.log("");
+    }
+}
+
+console.log(`Exploração concluída! XP: ${experiênciaAtual} | Vida: ${vidaAtual} | Mana: ${manaAtual}`);
