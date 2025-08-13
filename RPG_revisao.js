@@ -2,7 +2,6 @@
 
 let nome = "Asmoday";
 let classe = "arquimaga";
-let funcao = "debuffer";
 let origem = "Margens Negras Corrompidas";
 let nível = 16;
 let vida = 160;
@@ -43,7 +42,7 @@ console.log("O evento afetou a árvore e quebrou a lógica da existência dos se
 console.log("As divindades, agora corrompidas, lideram a organização 'Códice do Abismo', que busca destruir o que restou de Datheus.");
 console.log("Porém, seis heróis foram profetizados pelas antigas lendas a salvarem o sistema da fragmentação.");
 console.log(`    Vinda das ${origem}, ${nome} é uma ${classe} do Reino de Códrix e uma das salvações que nasceu entre bugs.`);
-console.log(`Com suas habilidades de ${funcao} e seu ${TIPO_ARMA} '${NOME_ARMA}', ela conduz ataques criptografados que enfraquessem trojans`);
+console.log(`Com suas habilidades ofensivas e seu ${TIPO_ARMA} '${NOME_ARMA}', ela conduz ataques criptografados que enfraquessem trojans`);
 console.log(`sombrios. ${nome} é capaz de acabar com scripts virais devido ao seu nível ${nível} e um ataque total de ${ataqueTotal} pontos.`);
 console.log(`A intensificação de proteção pela '${NOME_ARMADURA}' fornece um total de ${defesaTotal} pontos de defesa à ela.`);
 console.log(`Atualmente, ${nome} acumula ${xp} de XP e uma riqueza de ${ouro} de moedas de ouro.`);
@@ -167,7 +166,7 @@ if (manaDetectável <= 40 && manaAtual >= 150) {
     console.log(`🔸 Vida do boss: ${vidaInimigo}/660`);
 } else if (agilidadeInimigo > agilidade) {
     console.log("⚠️ O oponente é ágil... Não há tempo para se esquivar!", nomePersonagem, "utiliza uma magia defensiva para proteção.");
-    manaAtual -= 5;
+    manaAtual -= 10;
 } else if (vidaAtual <= 20) {
     console.log("🆘 A vida de", nomePersonagem, "está baixa!");
     console.log("Ligeiramente, a", classePersonagem, "se esconde atrás de um pilar e usa uma magia de cura");
@@ -191,13 +190,13 @@ if (vidaInimigo <= 0) {
     experiênciaAtual += 1000;
     ouro += 500;
     console.log("Combates vencidos:", combatesVencidos);
-    console.log("+ 1000 de XP. Experiência atual:", experiênciaAtual, "XP");
+    console.log("XP + 1000. Experiência atual:", experiênciaAtual, "XP");
     console.log("+ 500 moedas de ouro. Ouro atual:", ouroAtual, "moedas");
 } else {
     console.log(`😭 O CAMINHO É ARDUO! O poder do Cavaleiro Silencioso se mostra superior ao da ${classePersonagem} ${nomePersonagem} neste momento. Ferida e exausta, ela recua.`);
     console.log("No entanto, a derrota ainda é uma lição valiosa. Agora ela entende melhor a ameaça que o oponente representa e se prepara para o próximo confronto. A jornada não acabou!");
     experiênciaAtual += 200;
-    console.log("+ 200 de XP. Experiência atual:", experiênciaAtual, "XP");
+    console.log("XP +200. Experiência atual:", experiênciaAtual, "XP");
     console.log("");
 }
 
@@ -219,7 +218,7 @@ let ouroAtual = 62; */
 // === NOVOS ELEMENTOS PARA O CASTELO DOS ARRAYS ===
 //Inventário mágico
 let inventario = ["Poção restauradora de mana", "Elegia do Suspiro Final", "Absolvição Binária"];
-let aliados = ["Rei Phanes", "Sábio Anaxágoras", "Sacerdotisa Naberius"];
+let aliados = ["Guerreiro Phanes", "Sacerdotisa Naberius", "Sabio Anaxágoras"];
 let inimigosEncontrados = ["Devorador de frequências", "Flor encriptada", "Autômato sombrio"];
 let salasTorre = ["Galeria dos circuitos antigos", "Jardim mecânico", "Observatório binário"];
 let tesouroColetado = [];
@@ -228,10 +227,11 @@ console.log("_________________________________________________");
 console.log("");
 console.log("NÍVEL 3")
 console.log("");
-console.log("🏰 ===", heroinaNome, "ADENTRA A TORRE DOS ARRAYS ===");
+console.log("🏰 ===", heroinaNome, "ADENTRA A TORRE DA ADVERSIDADE ===");
 console.log("");
-console.log("Após derrotar um dos Deuses Criadores, O Cavaleiro Silencioso,", nomePersonagem, "adentra a torre de segredos, um lugar repleto de salas misteriosas.");
-console.log("Ela busca adquirir recompensas raras, se reunir a aliados e derrotar monstros poderosos.");
+console.log(`Após derrotar um dos Deuses Criadores, a ${classePersonagem} ${nomePersonagem} chega a Torre da Adversidade, um edificío que atua como uma base para os monstros do Códice do Abismo.`);
+console.log("O novo objetivo de", nomePersonagem, "é se reunir a aliados para derrotar as criaturas da organização, assim como coletar itens valiosos.")
+console.log("Pois, ainda que seja habitada por seres ameaçadores, a torre é repleta de salas misteriosas e recompensas únicas aos aventureiros que se arriscam...");
 console.log("Inventário inicial:", inventario.length, "itens mágicos");
 
 //Capítulo 1 - Criação e manipulação de arrays
@@ -295,9 +295,82 @@ for (let i = 0; i < salasTorre.length; i++) {
     } else {
         console.log(`Ao entrar no ${salasTorre[i]}, ${nomePersonagem} acha um mapa estelar codificado!`)
         experiênciaAtual += 50;
-        console.log("XP atual:", experiênciaAtual, "XP");
+        console.log("XP +50. Experiência atual:", experiênciaAtual, "XP");
         console.log("");
     }
 }
 
 console.log(`Exploração concluída! XP: ${experiênciaAtual} | Vida: ${vidaAtual} | Mana: ${manaAtual}`);
+
+//Capitulo 3 - Gerenciando grupos com for e aplicando lógica específica baseada em posições e índices
+console.log("");
+console.log("CAPÍTULO 3: CHAMADO À BATALHA");
+console.log("");
+
+//Recrutando aliados com for tradicional
+console.log("Chegou a hora de reunir aqueles que lutarão ao lado de", nomePersonagem, "na batalha final");
+console.log("");
+
+for (let i = 0; i < aliados.length; i++) {
+    let aliado = aliados[i];
+    console.log(`Aliado ${i + 1}: ${aliado} se junta à missão!`);
+    
+    //Cada posição do array determina a habilidade especial
+    if (i === 0) { //Primeiro aliado - Main damage dealer
+        console.log(`O ${aliado} assume a linha de frente junto à ${classePersonagem} ${nomePersonagem}, pronto para acabar com os monstros!`);
+        experiênciaAtual += 100;
+        console.log("XP +100. Experiência atual:", experiênciaAtual, "XP");
+        console.log("");
+    } else if (i === 1) { //Segundo aliado - Healer
+        console.log("A", aliado, "se junta à missão, trazendo a benção da cura para o grupo!");
+        vidaMaxima += 50;
+        vidaAtual += 50;
+        console.log("Buff aplicado! Vida máxima e vida atual + 50 pontos. Vida atual:", vidaAtual, "pontos");
+        console.log("");
+    } else { // Demais aliados
+        console.log("O", aliado, "reforça a equipe para o confronto!");
+        ouro += 30;
+        console.log("+ 30 moedas de ouro. Ouro atual:", ouroAtual, "moedas");
+        console.log("");
+    }
+}
+
+console.log("Equipe completa! A força da união ilumina o horizonte, enquanto a batalha final se aproxima.");
+console.log(`XP:${experiênciaAtual} | Ouro: ${ouroAtual} | Vida atual: ${vidaAtual} | Mana atual: ${manaAtual}`);
+
+//Capítulo 4 - Combinar arrays e loops for tradicionais para criar sistema de batalha
+console.log("");
+console.log("CAPÍTULO 4: CONFRONTO COM AS CRIATURAS DO CÓDICE DO ABISMO");
+console.log("");
+
+//Sistema de batalha usando arrrays e for tradicional
+let inimigosBatalha = ["Devorador de frequências", "Flor encriptada", "Autômato sombrio"];
+let danoRecebido = [];
+
+console.log("A equipe enfrenta", inimigosBatalha.length, "inimigos");
+console.log("");
+
+//Batalha usando for para controle preciso
+for (let i = 0; i < inimigosBatalha.length; i++) {
+    let inimigo = inimigosBatalha[i];
+    let danoArquimaga = Math.floor(Math.random() * 70) + 96; //Dano entre 96 e 165
+
+    console.log(`Rodada ${i + 1} - Enfrentando ${inimigo}`);
+    console.log(`${nomePersonagem} causa ${dano} de dano!`);
+    
+
+    danoRecebido.push(dano); //Armazena dano para cálculos posteriores
+
+    //Lógica especial para rodada baseada no índice
+    if (i === 0) {
+        console.log("Primeira vitória! O", inimigo, "é derrotado, deixando para trás uma pedra com frequências condensadas.");
+        experiênciaAtual += 300;
+        tesouroColetado.push("Pedra com frequências condensadas");
+    } else if (i === 1) {
+        console.log(`Segundo confronto! A ${inimigo} lança seu veneno contra ${nomePersonagem}, a ${classePersonagem} tenta se esquivar mas é tarde demais.`);
+        vidaAtual -= 100;
+        console.log("Vida - 100. Vida atual:", vidaAtual, "pontos");
+    } else {
+        console.log()
+    }
+}
