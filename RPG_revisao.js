@@ -130,7 +130,7 @@ if (ouroAtual >= 40) {
 //Escolha binária baseada na agilidade
 console.log("- Locomoção pela vila -")
 if (agilidade <= 10) {
-    console.log("Em consequência da insuficiência de agilidade, 🚶‍♀️", nomePersonagem, "se arrasta pelas ruas movimentadas da vila e sente os músculos pesados a cada passo.");
+    console.log("🚶‍♀️ Em consequência da insuficiência de agilidade,", nomePersonagem, "se arrasta pelas ruas movimentadas da vila e sente os músculos pesados a cada passo.");
     vidaAtual -= 4;
     console.log("Vida -4. Vida atual: ", vidaAtual)
 } else {
@@ -192,6 +192,7 @@ if (vidaInimigo <= 0) {
     console.log("Combates vencidos:", combatesVencidos);
     console.log("XP + 1000. Experiência atual:", experiênciaAtual, "XP");
     console.log("+ 500 moedas de ouro. Ouro atual:", ouroAtual, "moedas");
+    console.log("");
 } else {
     console.log(`😭 O CAMINHO É ARDUO! O poder do Cavaleiro Silencioso se mostra superior ao da ${classePersonagem} ${nomePersonagem} neste momento. Ferida e exausta, ela recua.`);
     console.log("No entanto, a derrota ainda é uma lição valiosa. Agora ela entende melhor a ameaça que o oponente representa e se prepara para o próximo confronto. A jornada não acabou!");
@@ -217,7 +218,7 @@ let ouroAtual = 62; */
 
 // === NOVOS ELEMENTOS PARA O CASTELO DOS ARRAYS ===
 //Inventário mágico
-let inventario = ["Poção restauradora de mana", "Elegia do Suspiro Final", "Absolvição Binária"];
+let inventario = ["🧪 Poção restauradora de mana", "🏹 Elegia do Suspiro Final", "🛡️ Absolvição Binária"];
 let aliados = ["Guerreiro Phanes", "Sacerdotisa Naberius", "Sabio Anaxágoras"];
 let inimigosEncontrados = ["Devorador de frequências", "Flor encriptada", "Autômato sombrio"];
 let salasTorre = ["Galeria dos circuitos antigos", "Jardim mecânico", "Observatório binário"];
@@ -227,20 +228,21 @@ console.log("_________________________________________________");
 console.log("");
 console.log("NÍVEL 3")
 console.log("");
-console.log("🏰 ===", heroinaNome, "ADENTRA A TORRE DA ADVERSIDADE ===");
+console.log("🛕", heroinaNome, "ADENTRA A TORRE DA ADVERSIDADE");
 console.log("");
 console.log(`Após derrotar um dos Deuses Criadores, a ${classePersonagem} ${nomePersonagem} chega a Torre da Adversidade, um edificío que atua como uma base para os monstros do Códice do Abismo.`);
 console.log("O novo objetivo de", nomePersonagem, "é se reunir a aliados para derrotar as criaturas da organização, assim como coletar itens valiosos.")
 console.log("Pois, ainda que seja habitada por seres ameaçadores, a torre é repleta de salas misteriosas e recompensas únicas aos aventureiros que se arriscam...");
 console.log("Inventário inicial:", inventario.length, "itens mágicos");
+console.log("");
 
 //Capítulo 1 - Criação e manipulação de arrays
 console.log("");
-console.log("CAPÍTULO 1: AS RELÍQUIAS PERDIDAS DA TORRE");
+console.log("💎 CAPÍTULO 1: AS RELÍQUIAS PERDIDAS DA TORRE");
 console.log("");
 
 //Declaração e inicialização
-let elixiresEncontrados = ["Agilidade", "Fogo gélido", "Visão noturna"];
+let elixiresEncontrados = ["Agilidade", "🔥 Fogo gélido", "👁️‍🗨️ Visão noturna", "🦾 Pele de ferro", "👣 Passo silencioso"];
 let armadilhasAtiradas = [];
 
 //Acesso e modificação de elementos
@@ -252,26 +254,28 @@ console.log("");
 
 //Modificando elemento específico
 console.log("- Aprimoramento do elixir -");
-inventario[0] = "Agilidade etérea" //upgrade do elixir!
-console.log("A alquimia digital reage,", nomePersonagem, "aprimorou um elixir!");
+elixiresEncontrados[0] = "🏃 Agilidade etérea" //upgrade do elixir!
+console.log("🪄 A alquimia digital reage,", nomePersonagem, "aprimorou um elixir!");
+console.log("Elixir da Agilidade ➡️ Elixir da Agilidade etérea")
 console.log("");
 
 //Métodos de arrays fundamentais
 console.log("- Um novo achado -");
-inventario.push("Adaga encantada"); //adiciona novo item no final
-console.log("Nos registros da torre, um novo elixir foi amazenado!")
-console.log("Novo item adicionado. Inventário:", inventario);
+inventario.push("🔪 Adaga encantada"); //adiciona novo item no final
+console.log("💼 Nos registros da torre, um novo item foi amazenado!")
+console.log("Novo item adicionado:", inventario[inventario.length - 1]);
+console.log("Inventário:", inventario);
 console.log("");
 
 console.log("- Item removido -")
 let itemRemovido = inventario.pop(); //remove no final
-console.log(nomePersonagem, "limpa seu inventário!");
+console.log("🧹", nomePersonagem, "limpa seu inventário!");
 console.log("Item removido:", itemRemovido);
 console.log("Inventário atual:", inventario);
 
 //Capítulo 2 - loop for tradicional
 console.log("");
-console.log("CAPÍTULO 2: EXPLORANDO A TORRE ALGORÍTMICA ");
+console.log("🕵 CAPÍTULO 2: EXPLORANDO A TORRE ALGORÍTMICA ");
 console.log("");
 
 // Explorando cada sala da torre usando for tradicional
@@ -284,16 +288,16 @@ for (let i = 0; i < salasTorre.length; i++) {
     //Lógica diferente para cada sala baseada no índice
     if (i === 0) {
         console.log(`Na ${salasTorre[i]}, ${nomePersonagem} encontra um grimório lendário!`);
-        tesouroColetado.push("Grimório lendário");
-        console.log("Novo item coletado. Tesouros coletados:", tesouroColetado);
+        tesouroColetado.push("📜 Grimório lendário");
+        console.log("🪶 Novo item coletado. Tesouros coletados:", tesouroColetado);
         console.log("");
     } else if (i === 1) {
-        console.log(`Flores de aço se abrem no ${salasTorre[i]}, tentando cortar ${nomePersonagem} com suas lâminas afiadas. Porém, a ${classePersonagem} cria um escudo mágico para se proteger!`);
+        console.log(`🥀 Flores de aço se abrem no ${salasTorre[i]}, tentando cortar ${nomePersonagem} com suas lâminas afiadas. Porém, a ${classePersonagem} cria um escudo mágico para se proteger!`);
         manaAtual -= 30;
         console.log("Mana atual:", manaAtual);
         console.log("");
     } else {
-        console.log(`Ao entrar no ${salasTorre[i]}, ${nomePersonagem} acha um mapa estelar codificado!`)
+        console.log(`🗺️ Ao entrar no ${salasTorre[i]}, ${nomePersonagem} acha um mapa estelar codificado!`)
         experiênciaAtual += 50;
         console.log("XP +50. Experiência atual:", experiênciaAtual, "XP");
         console.log("");
@@ -304,7 +308,7 @@ console.log(`Exploração concluída! XP: ${experiênciaAtual} | Vida: ${vidaAtu
 
 //Capitulo 3 - Gerenciando grupos com for e aplicando lógica específica baseada em posições e índices
 console.log("");
-console.log("CAPÍTULO 3: CHAMADO À BATALHA");
+console.log("🤜🤛 CAPÍTULO 3: CHAMADO À BATALHA");
 console.log("");
 
 //Recrutando aliados com for tradicional
@@ -317,18 +321,18 @@ for (let i = 0; i < aliados.length; i++) {
     
     //Cada posição do array determina a habilidade especial
     if (i === 0) { //Primeiro aliado - Main damage dealer
-        console.log(`O ${aliado} assume a linha de frente junto à ${classePersonagem} ${nomePersonagem}, pronto para acabar com os monstros!`);
+        console.log(`💪 O ${aliado} assume a linha de frente junto à ${classePersonagem} ${nomePersonagem}, pronto para acabar com os monstros!`);
         experiênciaAtual += 100;
         console.log("XP +100. Experiência atual:", experiênciaAtual, "XP");
         console.log("");
     } else if (i === 1) { //Segundo aliado - Healer
-        console.log("A", aliado, "se junta à missão, trazendo a benção da cura para o grupo!");
+        console.log("❤️‍🩹 A", aliado, "se une à equipe, trazendo a benção da cura para o grupo!");
         vidaMaxima += 50;
         vidaAtual += 50;
         console.log("Buff aplicado! Vida máxima e vida atual + 50 pontos. Vida atual:", vidaAtual, "pontos");
         console.log("");
     } else { // Demais aliados
-        console.log("O", aliado, "reforça a equipe para o confronto!");
+        console.log("🎓 O", aliado, "reforça a equipe para o confronto!");
         ouro += 30;
         console.log("+ 30 moedas de ouro. Ouro atual:", ouroAtual, "moedas");
         console.log("");
@@ -336,11 +340,11 @@ for (let i = 0; i < aliados.length; i++) {
 }
 
 console.log("Equipe completa! A força da união ilumina o horizonte, enquanto a batalha final se aproxima.");
-console.log(`XP:${experiênciaAtual} | Ouro: ${ouroAtual} | Vida atual: ${vidaAtual} | Mana atual: ${manaAtual}`);
+console.log(`XP: ${experiênciaAtual} | Ouro: ${ouroAtual} | Vida atual: ${vidaAtual} | Mana atual: ${manaAtual}`);
 
 //Capítulo 4 - Combinar arrays e loops for tradicionais para criar sistema de batalha
 console.log("");
-console.log("CAPÍTULO 4: CONFRONTO COM AS CRIATURAS DO CÓDICE DO ABISMO");
+console.log("⚔️ CAPÍTULO 4: CONFRONTO COM AS CRIATURAS DO CÓDICE DO ABISMO");
 console.log("");
 
 //Sistema de batalha usando arrrays e for tradicional
@@ -356,21 +360,68 @@ for (let i = 0; i < inimigosBatalha.length; i++) {
     let danoArquimaga = Math.floor(Math.random() * 70) + 96; //Dano entre 96 e 165
 
     console.log(`Rodada ${i + 1} - Enfrentando ${inimigo}`);
-    console.log(`${nomePersonagem} causa ${dano} de dano!`);
+    console.log(`${nomePersonagem} causa ${danoArquimaga} de dano!`);
     
 
-    danoRecebido.push(dano); //Armazena dano para cálculos posteriores
+    danoRecebido.push(danoArquimaga); //Armazena dano para cálculos posteriores
 
     //Lógica especial para rodada baseada no índice
     if (i === 0) {
-        console.log("Primeira vitória! O", inimigo, "é derrotado, deixando para trás uma pedra com frequências condensadas.");
-        experiênciaAtual += 300;
-        tesouroColetado.push("Pedra com frequências condensadas");
+        console.log("👾 Primeira vitória! O", inimigo, "é derrotado, deixando para trás uma pedra com frequências condensadas.");
+        tesouroColetado.push("🪨 Pedra com frequências condensadas");
+        console.log("Novo tesouro coletado. Tesouros coletados:", tesouroColetado);
+        console.log("");
     } else if (i === 1) {
-        console.log(`Segundo confronto! A ${inimigo} lança seu veneno contra ${nomePersonagem}, a ${classePersonagem} tenta se esquivar mas é tarde demais.`);
+        console.log(`💀 Segundo confronto! A ${inimigo} lança seu veneno contra ${nomePersonagem}, a ${classePersonagem} tenta se esquivar mas é tarde demais.`);
         vidaAtual -= 100;
-        console.log("Vida - 100. Vida atual:", vidaAtual, "pontos");
+        console.log("Vida -100. Vida atual:", vidaAtual, "pontos");
+        console.log("");
     } else {
-        console.log()
+        console.log("👹 Batalha final! O", inimigo, "perfura o chão com suas garras e desaparece nas profundezas.");
+        experiênciaAtual += 300;
+        console.log("+300 XP. Experiência atual:", experiênciaAtual, "XP");
+        console.log("");
     }
 }
+
+//Calculando estatísticas da batalha usando for tradicional
+let danoTotal = 0;
+for (let i = 0; i < danoRecebido.length; i++) {
+    danoTotal += danoRecebido[i];
+    console.log(`Rodada ${i + 1} -  Dano: ${danoRecebido[i]}`);
+    console.log("");
+}
+
+console.log("🔹 Dano total causado:", danoTotal);
+console.log("▫️ Tesouros coletados:", tesouroColetado.length, "itens épicos!");
+console.log("");
+
+//Epílogo - resultado
+console.log("");
+console.log("🔺 EPÍLOGO: O TRIUNFO SOBRE AS SOMBRAS");
+console.log("");
+
+//Estatísticas finais da jornada
+console.log("📶 Estatisticas finais da aventura:")
+console.log("Nível alcançado:", nivelPersonagem);
+console.log("Experiência total:", experiênciaAtual, "XP");
+console.log("Vida restante:", vidaAtual, "/", vidaMaxima);
+console.log("Ouro acumulado:", ouroAtual, "moedas");
+console.log("Qunatidade de itens no inventário:", inventario.length);
+console.log("Aliados conquistados:", aliados.length);
+console.log("Quantidade de tesouros épicos:", tesouroColetado.length);
+console.log("");
+
+//Adicionar +10 linhas épicas de continuação
+console.log("As últimas faíscas do Autômato sombrio desaparecem no ar úmido da torre. ");
+console.log("O chão ainda treme pelo impacto da batalha final.");
+console.log("A equipe se reúne, exausta, mas de pé.");
+console.log("As armas repousam, ainda brilhando com a energia do combate.");
+console.log("Os portões da torre se abrem com um estrondo ensurdecedor.");
+console.log("Um vento frio atravessa o corredor, carregando o eco da vitória.");
+console.log("Lá fora, o horizonte parece mais vasto, como se o mundo estivesse se expandindo");
+console.log("As engrenagens da fortaleza giram pela última vez antes de pararem para sempre.");
+console.log("O peso da luta dá lugar ao orgulho de ter resistido até o fim.");
+console.log("A primeira luz do amanhacer ilumina a fortaleza silenciosa, prometendo um novo começo.");
+console.log("A jornada pode ter acabado aqui... mas novas missões aguardam.");
+console.log("A lenda de", nomePersonagem, "continua!");
