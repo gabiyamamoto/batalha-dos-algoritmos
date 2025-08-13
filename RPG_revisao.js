@@ -188,6 +188,7 @@ if (vidaInimigo <= 0) {
     console.log(`🏆 VITÓRIA TRIUNFANTE! A ${classePersonagem} ${nomePersonagem} derrota o Cavaleiro Silencioso, calando por fim uma das figuras mais perigosas do Códice do Abismo.`);
     combatesVencidos++;
     experiênciaAtual += 1000;
+    nivelPersonagem++;
     ouro += 500;
     console.log("Combates vencidos:", combatesVencidos);
     console.log("XP + 1000. Experiência atual:", experiênciaAtual, "XP");
@@ -201,7 +202,7 @@ if (vidaInimigo <= 0) {
     console.log("");
 }
 
-// === continuação da saga épica - nível 3 ===
+// NÍVEL 3 - CONTINUAÇÃO DA SAGA ÉPICA ===
 //Retomar os dados do personagem dos níveis anteriores
 
 let heroinaNome = "ASMODAY";
@@ -379,6 +380,7 @@ for (let i = 0; i < inimigosBatalha.length; i++) {
     } else {
         console.log("👹 Batalha final! O", inimigo, "perfura o chão com suas garras e desaparece nas profundezas.");
         experiênciaAtual += 300;
+        nivelPersonagem++;
         console.log("+300 XP. Experiência atual:", experiênciaAtual, "XP");
         console.log("");
     }
@@ -402,14 +404,15 @@ console.log("🔺 EPÍLOGO: O TRIUNFO SOBRE AS SOMBRAS");
 console.log("");
 
 //Estatísticas finais da jornada
-console.log("📶 Estatisticas finais da aventura:")
-console.log("Nível alcançado:", nivelPersonagem);
-console.log("Experiência total:", experiênciaAtual, "XP");
-console.log("Vida restante:", vidaAtual, "/", vidaMaxima);
-console.log("Ouro acumulado:", ouroAtual, "moedas");
-console.log("Qunatidade de itens no inventário:", inventario.length);
-console.log("Aliados conquistados:", aliados.length);
-console.log("Quantidade de tesouros épicos:", tesouroColetado.length);
+console.log("📶 Estatisticas finais da aventura:");
+console.log("");
+console.log("🔝 Nível alcançado:", nivelPersonagem);
+console.log("📈 Experiência total:", experiênciaAtual, "XP");
+console.log("❤️ Vida restante:", vidaAtual, "/", vidaMaxima);
+console.log("💰 Ouro acumulado:", ouroAtual, "moedas");
+console.log("💼 Quantidade de itens no inventário:", inventario.length);
+console.log("👥 Aliados conquistados:", aliados.length);
+console.log("🗝️ Quantidade de tesouros épicos:", tesouroColetado.length);
 console.log("");
 
 //Adicionar +10 linhas épicas de continuação
